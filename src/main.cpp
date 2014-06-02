@@ -40,14 +40,14 @@ CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16); // PoW starting difficulty
 CBigNum bnProofOfWorkFirstBlock(~uint256(0) >> 30);
 
 unsigned int nTargetSpacing = 1 * 45; // 45 seconds
-unsigned int nRetarget = 20;
+unsigned int nRetarget = 5;
 unsigned int nStakeMinAge = 10 * 60 * 60; // 10 hours
 unsigned int nStakeMaxAge = -1;           //unlimited
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 static const int64_t nTargetTimespan_legacy = nTargetSpacing * nRetarget; // every 20 blocks
 static const int64_t nInterval = nTargetTimespan_legacy / nTargetSpacing;
 
-static const int64_t nTargetTimespan = 20 * 45;
+static const int64_t nTargetTimespan = 5 * 45;
 
 int64_t devCoin = 0 * COIN;
 int nCoinbaseMaturity = 40;
@@ -976,13 +976,13 @@ int64_t GetProofOfWorkReward(int64_t nFees)
         
     if (pindexBest->nHeight == 1)
       {
-        int64_t nSubsidy = 88140 * COIN;
+        int64_t nSubsidy = 948841 * COIN;
         return nSubsidy + nFees;
       }
       
     else if (pindexBest->nHeight <= 100)
       {
-        int64_t nSubsidy = 0 * COIN;
+        int64_t nSubsidy = 1 * COIN;
         return nSubsidy + nFees;
       }
       
